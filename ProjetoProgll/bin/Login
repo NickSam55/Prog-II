@@ -72,8 +72,6 @@ public class Login extends JFrame {
 
     private Usuario getAuthenticatedUser(String nome String palavra_passe) {
         //TODO: Implementar a lógica de autenticação
-        
-        //return null;
 
     }
 
