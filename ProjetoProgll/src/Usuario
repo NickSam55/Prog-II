@@ -1,0 +1,11 @@
+public class Usuario {
+    public String nome;
+    public String palavra_passe;
+    public String Email;
+    public String telefone;
+    public String matricula;
+    public String turno;
+    public String curso;
+    public String ano;
+    
+}

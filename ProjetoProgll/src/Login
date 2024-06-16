@@ -1,0 +1,80 @@
+import javax.swing.*;
+import javax.awt.*;
+
+public class Login extends JFrame {
+    final private Font mainFont = new Font("Segoe print", Font.BOLD, 18);
+    JTextField tfEmail;
+    public void initialize() {
+        JLabel IbloginForm = new JLabel("Pagina de loge", SwingConstants.CENTER);
+        IbloginForm.setFont(mainFont);
+
+        JLabel IbNumero = new JLabel("Numero de telefone");
+        IbNumero.setFont(mainFont);
+
+        tfEmail = new JTextField();
+        tfEmail.setFont(mainFont);
+
+        JLabel IbPassword = new JLabel("Palavra-passe");
+        IbPassword.setFont(mainFont);
+
+        pfPassword = new JPasswordField();
+        pfPassword.setFont(mainFont);
+
+        JPanel formPanel = new JPanel();
+        formPanel.setLayout(new GridLayout(0, 1, 10, 10));
+        formPanel.add(IbloginForm);
+        formPanel.add(IbNumero);
+        formPanel.add(tfEmail);
+        formPanel.add(IbPassword);
+        formPanel.add(pfPassword);
+
+        JButton btnLogin = new JButton("Entrar");
+        btnLogin.setFont(mainFont);
+        btnLogin.addActionListener(new LoginActionListener()) {
+
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String numero = tfEmail.getText();
+                String password = String.valueOf(pfPassword.getPassword());
+
+                Usuario user = getAuthenticatedUser(nome, palavra_passe);
+
+                if (user != null) {
+                    JOptionPane.showMessageDialog(null, "Bem-vindo(a) " + user.getNome());
+                    dispose();
+                    new MainFrame(user).setVisible(true);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Credenciais inválidas");
+                        }
+                        }
+                        });
+                        /*
+                        add(formPanel, BorderLayout.CENTER);
+                        add(btnLogin, BorderLayout.SOUTH);
+                        setSize(300, 250);
+                        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                        setVisible(true);
+                        */
+        };
+
+
+
+
+        setTitle("Pagina de login");
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        setSize(400, 500);
+        setMinimumSize(new Dimension(350, 400));
+        //setResizable(false);
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
+
+    private Usuario getAuthenticatedUser(String nome String palavra_passe) {
+        //TODO: Implementar a lógica de autenticação
+        
+        //return null;
+
+    }
+
+}
