@@ -1,6 +1,6 @@
 public class Usuario {
     public String nome;
-    public String palavra_passe;
+    public String password;
     public String Email;
     public String telefone;
     public String matricula;
